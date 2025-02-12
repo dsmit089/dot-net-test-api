@@ -18,7 +18,7 @@ COPY --from=build /app/build ./
 # Expose the application port
 EXPOSE 80
 EXPOSE 443
-EXPOSE 888
+EXPOSE 8001
 
 # Define the entry point for the application
 ENTRYPOINT ["dotnet", "test-api.dll"]
