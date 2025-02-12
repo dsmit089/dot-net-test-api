@@ -4,7 +4,7 @@ namespace test_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class TestController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -13,16 +13,16 @@ namespace test_api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public TestController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetWeatherForecast2")]
         public IEnumerable<WeatherForecast> Get()
         {
 
-            
+             Environment.Exit(1);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
